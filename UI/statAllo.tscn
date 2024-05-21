@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://kox8oe836agj"]
+
+[ext_resource type="Script" path="res://Scripts/UI Scripts/Character Creation/statAllo.gd" id="1_fwqff"]
+[ext_resource type="Script" path="res://Scripts/UI Scripts/Character Creation/btn_PointBuy.gd" id="2_qtukb"]
+
+[node name="statAllo" type="Label" node_paths=PackedStringArray("btnDec", "btnInc", "statRef")]
+offset_left = -130.0
+offset_right = 70.0
+offset_bottom = 26.0
+text = "Electronics/Security Tech"
+horizontal_alignment = 2
+script = ExtResource("1_fwqff")
+btnDec = NodePath("skillLevel/btn_decrease")
+btnInc = NodePath("skillLevel/btn_increase")
+statRef = NodePath("skillLevel")
+
+[node name="skillLevel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_right = 296.0
+offset_bottom = 26.0
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="btn_decrease" type="Button" parent="skillLevel"]
+layout_mode = 0
+offset_top = -5.0
+offset_right = 18.0
+offset_bottom = 26.0
+text = "<"
+script = ExtResource("2_qtukb")
+statMax = 6
+statMin = 0
+
+[node name="btn_increase" type="Button" parent="skillLevel"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -5.0
+offset_right = 80.0
+offset_bottom = 26.0
+text = ">"
+script = ExtResource("2_qtukb")
+incOrDec = true
+statMax = 6
+statMin = 0
+
+[connection signal="pressed" from="skillLevel/btn_decrease" to="skillLevel/btn_decrease" method="_on_pressed"]
+[connection signal="pressed" from="skillLevel/btn_increase" to="skillLevel/btn_increase" method="_on_pressed"]

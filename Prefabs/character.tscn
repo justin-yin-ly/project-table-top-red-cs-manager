@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3xvroiupg1rt"]
+
+[ext_resource type="Script" path="res://Scripts/charStats.gd" id="1_g0hsv"]
+[ext_resource type="Script" path="res://Scripts/genericFunctions.gd" id="2_8g3n6"]
+
+[node name="character" type="Node2D" node_paths=PackedStringArray("genFuncs")]
+script = ExtResource("1_g0hsv")
+genFuncs = NodePath("genFuncHolder")
+
+[node name="genFuncHolder" type="Node2D" parent="."]
+script = ExtResource("2_8g3n6")

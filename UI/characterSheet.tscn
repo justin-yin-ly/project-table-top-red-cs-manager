@@ -1,0 +1,1445 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2kshdocsn58s"]
+
+[ext_resource type="Script" path="res://Scripts/UI Scripts/chSht_uiManager.gd" id="1_4ei86"]
+[ext_resource type="Texture2D" uid="uid://d8sivnc77lfh" path="res://Sprites/BG Squares/bgSquare_gray.png" id="1_6vluq"]
+[ext_resource type="Script" path="res://Scripts/UI Scripts/btn_tabs.gd" id="3_6uotk"]
+[ext_resource type="PackedScene" uid="uid://b0o0vrru5jlqp" path="res://UI/skill.tscn" id="4_k16rh"]
+[ext_resource type="Texture2D" uid="uid://b2q7k63ggke64" path="res://Sprites/BG Squares/bgSquare_white.png" id="4_ktvpe"]
+[ext_resource type="Texture2D" uid="uid://yu8le71c5o45" path="res://Sprites/BG Squares/bgSquare_darkGray.png" id="6_6b4f8"]
+[ext_resource type="Texture2D" uid="uid://cepieasaotnsw" path="res://Sprites/BG Squares/bgSquare_cyan.png" id="7_gbrhs"]
+
+[node name="characterSheet" type="Control" node_paths=PackedStringArray("sklGrp_awareness", "sklGrp_body", "sklGrp_control", "sklGrp_education", "sklGrp_fighting", "sklGrp_performance", "sklGrp_rangedWep", "sklGrp_social", "sklGrp_technique", "node_sklGrp_extEdu", "node_sklGrp_performance", "statLabel_Int", "statLabel_Ref", "statLabel_Dex", "statLabel_Tech", "statLabel_Cool", "statLabel_Will", "statLabel_Luck", "statLabel_Move", "statLabel_Body", "statLabel_Emp", "infoLabel_HitPoints", "infoLabel_CharName", "infoLabel_CharRole", "infoLabel_Humanity", "infoLabel_DeathSave", "infoLabel_SerWoundThreshold", "input_Cash", "input_ImpPoints", "input_ImpPointsLT", "lifepath_nodeArray", "rolePath")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ei86")
+sklGrp_awareness = [NodePath("branch_skills/branch_skillGroups/skillGroup_awareness/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_awareness/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_awareness/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_awareness/skillRoot4"), NodePath("branch_skills/branch_skillGroups/skillGroup_awareness/skillRoot5")]
+sklGrp_body = [NodePath("branch_skills/branch_skillGroups/skillGroup_body/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_body/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_body/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_body/skillRoot4"), NodePath("branch_skills/branch_skillGroups/skillGroup_body/skillRoot5"), NodePath("branch_skills/branch_skillGroups/skillGroup_body/skillRoot6")]
+sklGrp_control = [NodePath("branch_skills/branch_skillGroups/skillGroup_control/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_control/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_control/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_control/skillRoot4")]
+sklGrp_education = [NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot4"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot5"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot6"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot7"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot8"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot9"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot10"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot11"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot12"), NodePath("branch_skills/branch_skillGroups/skillGroup_education/skillRoot13")]
+sklGrp_fighting = [NodePath("branch_skills/branch_skillGroups/skillGroup_fighting/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_fighting/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_fighting/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_fighting/skillRoot4")]
+sklGrp_performance = [NodePath("branch_skills/branch_skillGroups/skillGroup_performance/skillRoot")]
+sklGrp_rangedWep = [NodePath("branch_skills/branch_skillGroups/skillGroup_rangedweapon/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_rangedweapon/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_rangedweapon/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_rangedweapon/skillRoot4"), NodePath("branch_skills/branch_skillGroups/skillGroup_rangedweapon/skillRoot5")]
+sklGrp_social = [NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot4"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot5"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot6"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot7"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot8"), NodePath("branch_skills/branch_skillGroups/skillGroup_social/skillRoot9")]
+sklGrp_technique = [NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot2"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot3"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot4"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot5"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot6"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot7"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot8"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot9"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot10"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot11"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot12"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot13"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot14"), NodePath("branch_skills/branch_skillGroups/skillGroup_technique/skillRoot15")]
+node_sklGrp_extEdu = NodePath("branch_skills/branch_skillGroups/skillGroup_ext-education")
+node_sklGrp_performance = NodePath("branch_skills/branch_skillGroups/skillGroup_performance")
+statLabel_Int = NodePath("branch_stats/statLabel_int/statNum_int")
+statLabel_Ref = NodePath("branch_stats/statLabel_ref/statNum_ref")
+statLabel_Dex = NodePath("branch_stats/statLabel_dex/statNum_dex")
+statLabel_Tech = NodePath("branch_stats/statLabel_tech/statNum_tech")
+statLabel_Cool = NodePath("branch_stats/statLabel_cool/statNum_cool")
+statLabel_Will = NodePath("branch_stats/statLabel_will/statNum_will")
+statLabel_Luck = NodePath("branch_stats/statLabel_luck/statNum_luck")
+statLabel_Move = NodePath("branch_stats/statLabel_move/statNum_move")
+statLabel_Body = NodePath("branch_stats/statLabel_body/statNum_body")
+statLabel_Emp = NodePath("branch_stats/statLabel_emp/statNum_emp")
+infoLabel_HitPoints = NodePath("branch_charInfo/info_charHPLabel/info_charHPNum")
+infoLabel_CharName = NodePath("branch_charInfo/info_charName")
+infoLabel_CharRole = NodePath("branch_charInfo/info_charName/info_charRole")
+infoLabel_Humanity = NodePath("branch_charInfo/info_charHumanityLabel/info_charHumanityNum")
+infoLabel_DeathSave = NodePath("branch_charInfo/info_charDeathSaveLabel/info_charDeathSaveNum")
+infoLabel_SerWoundThreshold = NodePath("branch_charInfo/info_charSerWoundThreshLabel/info_charSerWoundThreshNum")
+input_Cash = NodePath("branch_charInfo/info_cashLabel/cashInput")
+input_ImpPoints = NodePath("branch_charInfo/info_impPointsLabel/impPointsInput")
+input_ImpPointsLT = NodePath("branch_charInfo/info_impPointsLabel/info_totalPointsLabel/impPointsLTInput")
+lifepath_nodeArray = [NodePath("branch_lifepath/branch_regPath/label_cultOrigins/text_cultOrigins"), NodePath("branch_lifepath/branch_regPath/label_personality/text_personality"), NodePath("branch_lifepath/branch_regPath/label_clothingStyle/text_clothingStyle"), NodePath("branch_lifepath/branch_regPath/label_hairstyle/text_hairstyle"), NodePath("branch_lifepath/branch_regPath/label_affectation/text_affectation"), NodePath("branch_lifepath/branch_regPath/label_valueMost/text_valueMost"), NodePath("branch_lifepath/branch_regPath/label_peopleFeel/text_peopleFeel"), NodePath("branch_lifepath/branch_regPath/label_valuedPerson/text_valuedPerson"), NodePath("branch_lifepath/branch_regPath/label_valuedPossession/text_valuedPossession"), NodePath("branch_lifepath/branch_regPath/label_familyBackground/text_familyBackground"), NodePath("branch_lifepath/branch_regPath/label_childhoodEnv/text_childhoodEnv"), NodePath("branch_lifepath/branch_regPath/label_familyCrisis/text_familyCrisis"), NodePath("branch_lifepath/branch_regPath/label_lifeGoals/text_lifeGoals")]
+rolePath = NodePath("branch_lifepath/branch_rolepath")
+
+[node name="BgSquareGray" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 1)
+texture = ExtResource("1_6vluq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -340)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_ktvpe")
+
+[node name="branch_stats" type="Node2D" parent="."]
+
+[node name="statLabel_int" type="Label" parent="branch_stats"]
+offset_left = 160.0
+offset_top = -460.0
+offset_right = 240.0
+offset_bottom = -434.0
+text = "INT"
+horizontal_alignment = 1
+
+[node name="statNum_int" type="Label" parent="branch_stats/statLabel_int"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_ref" type="Label" parent="branch_stats"]
+offset_left = 160.0
+offset_top = -410.0
+offset_right = 240.0
+offset_bottom = -384.0
+text = "REF"
+horizontal_alignment = 1
+
+[node name="statNum_ref" type="Label" parent="branch_stats/statLabel_ref"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_dex" type="Label" parent="branch_stats"]
+offset_left = 160.0
+offset_top = -360.0
+offset_right = 240.0
+offset_bottom = -334.0
+text = "DEX"
+horizontal_alignment = 1
+
+[node name="statNum_dex" type="Label" parent="branch_stats/statLabel_dex"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_tech" type="Label" parent="branch_stats"]
+offset_left = 160.0
+offset_top = -310.0
+offset_right = 240.0
+offset_bottom = -284.0
+text = "TECH"
+horizontal_alignment = 1
+
+[node name="statNum_tech" type="Label" parent="branch_stats/statLabel_tech"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_cool" type="Label" parent="branch_stats"]
+offset_left = 160.0
+offset_top = -260.0
+offset_right = 240.0
+offset_bottom = -234.0
+text = "COOL"
+horizontal_alignment = 1
+
+[node name="statNum_cool" type="Label" parent="branch_stats/statLabel_cool"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_will" type="Label" parent="branch_stats"]
+offset_left = 260.0
+offset_top = -460.0
+offset_right = 340.0
+offset_bottom = -434.0
+text = "WILL"
+horizontal_alignment = 1
+
+[node name="statNum_will" type="Label" parent="branch_stats/statLabel_will"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_luck" type="Label" parent="branch_stats"]
+offset_left = 260.0
+offset_top = -410.0
+offset_right = 340.0
+offset_bottom = -384.0
+text = "LUCK"
+horizontal_alignment = 1
+
+[node name="statNum_luck" type="Label" parent="branch_stats/statLabel_luck"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_move" type="Label" parent="branch_stats"]
+offset_left = 260.0
+offset_top = -360.0
+offset_right = 340.0
+offset_bottom = -334.0
+text = "MOVE"
+horizontal_alignment = 1
+
+[node name="statNum_move" type="Label" parent="branch_stats/statLabel_move"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_body" type="Label" parent="branch_stats"]
+offset_left = 260.0
+offset_top = -310.0
+offset_right = 340.0
+offset_bottom = -284.0
+text = "BODY"
+horizontal_alignment = 1
+
+[node name="statNum_body" type="Label" parent="branch_stats/statLabel_body"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="statLabel_emp" type="Label" parent="branch_stats"]
+offset_left = 260.0
+offset_top = -260.0
+offset_right = 340.0
+offset_bottom = -234.0
+text = "EMP"
+horizontal_alignment = 1
+
+[node name="statNum_emp" type="Label" parent="branch_stats/statLabel_emp"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="branch_charInfo" type="Node2D" parent="."]
+
+[node name="info_charName" type="Label" parent="branch_charInfo"]
+offset_left = -355.0
+offset_top = -460.0
+offset_right = -155.0
+offset_bottom = -434.0
+text = "<Character Name>"
+horizontal_alignment = 1
+
+[node name="info_charRole" type="Label" parent="branch_charInfo/info_charName"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 46.0
+scale = Vector2(0.8, 0.8)
+text = "<Character Role>"
+horizontal_alignment = 1
+
+[node name="info_charHPLabel" type="Label" parent="branch_charInfo"]
+offset_left = -355.0
+offset_top = -410.0
+offset_right = -255.0
+offset_bottom = -384.0
+text = "Hit Points"
+horizontal_alignment = 1
+
+[node name="info_charHPNum" type="Label" parent="branch_charInfo/info_charHPLabel"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 100.0
+offset_bottom = 52.0
+text = "0 / 0
+"
+horizontal_alignment = 1
+
+[node name="info_charHumanityLabel" type="Label" parent="branch_charInfo"]
+offset_left = -245.0
+offset_top = -410.0
+offset_right = -145.0
+offset_bottom = -384.0
+text = "Humanity"
+horizontal_alignment = 1
+
+[node name="info_charHumanityNum" type="Label" parent="branch_charInfo/info_charHumanityLabel"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 100.0
+offset_bottom = 52.0
+text = "0 / 0
+"
+horizontal_alignment = 1
+
+[node name="info_charDeathSaveLabel" type="Label" parent="branch_charInfo"]
+offset_left = -355.0
+offset_top = -350.0
+offset_right = -255.0
+offset_bottom = -324.0
+text = "Death Save"
+horizontal_alignment = 1
+
+[node name="info_charDeathSaveNum" type="Label" parent="branch_charInfo/info_charDeathSaveLabel"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 100.0
+offset_bottom = 52.0
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="info_charSerWoundThreshLabel" type="Label" parent="branch_charInfo"]
+offset_left = -245.0
+offset_top = -350.0
+offset_right = -145.0
+offset_bottom = -324.0
+text = "Ser. Wound"
+horizontal_alignment = 1
+
+[node name="info_charSerWoundThreshNum" type="Label" parent="branch_charInfo/info_charSerWoundThreshLabel"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 100.0
+offset_bottom = 52.0
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="info_cashLabel" type="Label" parent="branch_charInfo"]
+offset_left = -355.0
+offset_top = -290.0
+offset_right = -255.0
+offset_bottom = -264.0
+text = "Cash"
+horizontal_alignment = 1
+
+[node name="cashInput" type="SpinBox" parent="branch_charInfo/info_cashLabel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 24.0
+offset_right = 110.0
+offset_bottom = 55.0
+allow_greater = true
+alignment = 1
+
+[node name="info_impPointsLabel" type="Label" parent="branch_charInfo"]
+offset_left = -245.0
+offset_top = -290.0
+offset_right = -145.0
+offset_bottom = -264.0
+text = "Imp. Points"
+horizontal_alignment = 1
+
+[node name="impPointsInput" type="SpinBox" parent="branch_charInfo/info_impPointsLabel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 24.0
+offset_right = 105.0
+offset_bottom = 55.0
+allow_greater = true
+alignment = 1
+
+[node name="info_totalPointsLabel" type="Label" parent="branch_charInfo/info_impPointsLabel"]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 125.0
+offset_bottom = 79.0
+scale = Vector2(0.8, 0.8)
+text = "Lifetime Points"
+horizontal_alignment = 1
+
+[node name="impPointsLTInput" type="SpinBox" parent="branch_charInfo/info_impPointsLabel/info_totalPointsLabel"]
+layout_mode = 0
+offset_left = 16.25
+offset_top = 24.0
+offset_right = 116.25
+offset_bottom = 55.0
+allow_greater = true
+alignment = 1
+
+[node name="btnGroup_sheetTabs" type="Node2D" parent="."]
+position = Vector2(0, 10)
+
+[node name="btn_skills" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -270.0
+offset_top = -190.0
+offset_right = -150.0
+offset_bottom = -159.0
+text = "Skills"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skills"), NodePath("../../branch_inventory"), NodePath("../../branch_combat"), NodePath("../../branch_cyberware"), NodePath("../../branch_roleAbility"), NodePath("../../branch_improvement"), NodePath("../../branch_downtime"), NodePath("../../branch_lifepath")]
+
+[node name="btn_combat" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -130.0
+offset_top = -190.0
+offset_right = -10.0
+offset_bottom = -159.0
+text = "Combat"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_combat"), NodePath("../../branch_skills"), NodePath("../../branch_inventory"), NodePath("../../branch_cyberware"), NodePath("../../branch_roleAbility"), NodePath("../../branch_improvement"), NodePath("../../branch_downtime"), NodePath("../../branch_lifepath")]
+
+[node name="btn_inventory" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 10.0
+offset_top = -190.0
+offset_right = 130.0
+offset_bottom = -159.0
+text = "Inventory"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_inventory"), NodePath("../../branch_skills"), NodePath("../../branch_combat"), NodePath("../../branch_cyberware"), NodePath("../../branch_roleAbility"), NodePath("../../branch_improvement"), NodePath("../../branch_downtime"), NodePath("../../branch_lifepath")]
+
+[node name="btn_downtime" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 150.0
+offset_top = -190.0
+offset_right = 270.0
+offset_bottom = -159.0
+text = "Downtime"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_downtime"), NodePath("../../branch_skills"), NodePath("../../branch_inventory"), NodePath("../../branch_combat"), NodePath("../../branch_cyberware"), NodePath("../../branch_roleAbility"), NodePath("../../branch_improvement"), NodePath("../../branch_lifepath")]
+
+[node name="btn_improvement" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -270.0
+offset_top = -150.0
+offset_right = -150.0
+offset_bottom = -119.0
+text = "Improvement"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_improvement"), NodePath("../../branch_skills"), NodePath("../../branch_inventory"), NodePath("../../branch_combat"), NodePath("../../branch_cyberware"), NodePath("../../branch_roleAbility"), NodePath("../../branch_downtime"), NodePath("../../branch_lifepath")]
+
+[node name="btn_roleAbility" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -130.0
+offset_top = -150.0
+offset_right = -10.0
+offset_bottom = -119.0
+text = "Role Ability"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_roleAbility"), NodePath("../../branch_skills"), NodePath("../../branch_inventory"), NodePath("../../branch_combat"), NodePath("../../branch_cyberware"), NodePath("../../branch_improvement"), NodePath("../../branch_downtime"), NodePath("../../branch_lifepath")]
+
+[node name="btn_cyberware" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 10.0
+offset_top = -150.0
+offset_right = 130.0
+offset_bottom = -119.0
+text = "Cyberware"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_cyberware"), NodePath("../../branch_skills"), NodePath("../../branch_inventory"), NodePath("../../branch_combat"), NodePath("../../branch_roleAbility"), NodePath("../../branch_improvement"), NodePath("../../branch_downtime"), NodePath("../../branch_lifepath")]
+
+[node name="btn_lifepath" type="Button" parent="btnGroup_sheetTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 150.0
+offset_top = -150.0
+offset_right = 270.0
+offset_bottom = -119.0
+text = "Lifepath"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_lifepath"), NodePath("../../branch_skills"), NodePath("../../branch_inventory"), NodePath("../../branch_combat"), NodePath("../../branch_cyberware"), NodePath("../../branch_roleAbility"), NodePath("../../branch_improvement"), NodePath("../../branch_downtime")]
+
+[node name="branch_skills" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, 60)
+
+[node name="btnGroup_skillTabs" type="Node2D" parent="branch_skills"]
+
+[node name="skillBtn_Awareness" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -370.0
+offset_top = -150.0
+offset_right = -230.0
+offset_bottom = -119.0
+text = "Awareness"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Body" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -220.0
+offset_top = -150.0
+offset_right = -80.0
+offset_bottom = -119.0
+text = "Body"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Control" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -70.0
+offset_top = -150.0
+offset_right = 70.0
+offset_bottom = -119.0
+text = "Control"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Education" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 80.0
+offset_top = -150.0
+offset_right = 220.0
+offset_bottom = -119.0
+text = "Education"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Ext-Education" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 230.0
+offset_top = -150.0
+offset_right = 370.0
+offset_bottom = -119.0
+text = "Education+"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_ext-education"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Fighting" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -370.0
+offset_top = -109.0
+offset_right = -230.0
+offset_bottom = -78.0
+text = "Fighting"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Performance" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -220.0
+offset_top = -109.0
+offset_right = -80.0
+offset_bottom = -78.0
+text = "Performance"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_RangedWeapon" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = -70.0
+offset_top = -109.0
+offset_right = 70.0
+offset_bottom = -78.0
+text = "Ranged Weapon"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Social" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 80.0
+offset_top = -109.0
+offset_right = 220.0
+offset_bottom = -78.0
+text = "Social"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="skillBtn_Technique" type="Button" parent="branch_skills/btnGroup_skillTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 230.0
+offset_top = -109.0
+offset_right = 370.0
+offset_bottom = -78.0
+text = "Technique"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_skillGroups/skillGroup_technique"), NodePath("../../branch_skillGroups/skillGroup_awareness"), NodePath("../../branch_skillGroups/skillGroup_body"), NodePath("../../branch_skillGroups/skillGroup_control"), NodePath("../../branch_skillGroups/skillGroup_education"), NodePath("../../branch_skillGroups/skillGroup_fighting"), NodePath("../../branch_skillGroups/skillGroup_performance"), NodePath("../../branch_skillGroups/skillGroup_rangedweapon"), NodePath("../../branch_skillGroups/skillGroup_social"), NodePath("../../branch_skillGroups/skillGroup_ext-education")]
+metadata/_edit_use_anchors_ = true
+
+[node name="branch_skillGroups" type="Node2D" parent="branch_skills"]
+
+[node name="skillGroup_awareness" type="Node2D" parent="branch_skills/branch_skillGroups"]
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_awareness" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_right = -180.0
+text = "Concentration"
+statIndex = 5
+skillGroupIndex = 0
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_awareness" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_right = -60.0
+text = "Conceal/Reveal Object"
+autowrap_mode = 2
+skillGroupIndex = 0
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_awareness" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_right = 60.0
+text = "Lip Reading"
+skillGroupIndex = 0
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_awareness" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_right = 180.0
+text = "Perception"
+skillGroupIndex = 0
+skillIndex = 3
+
+[node name="skillRoot5" parent="branch_skills/branch_skillGroups/skillGroup_awareness" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_right = 300.0
+text = "Tracking"
+skillGroupIndex = 0
+skillIndex = 4
+
+[node name="skillGroup_body" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_body" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_right = -180.0
+text = "Athletics"
+statIndex = 2
+skillGroupIndex = 1
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_body" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_right = -60.0
+text = "Contortionist"
+statIndex = 2
+skillGroupIndex = 1
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_body" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_right = 60.0
+text = "Dance"
+statIndex = 2
+skillGroupIndex = 1
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_body" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_right = 180.0
+text = "Endurance"
+statIndex = 5
+skillGroupIndex = 1
+skillIndex = 3
+
+[node name="skillRoot5" parent="branch_skills/branch_skillGroups/skillGroup_body" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_right = 300.0
+text = "Resist Toture/Drugs"
+autowrap_mode = 2
+statIndex = 5
+skillGroupIndex = 1
+skillIndex = 4
+
+[node name="skillRoot6" parent="branch_skills/branch_skillGroups/skillGroup_body" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_top = 150.0
+offset_right = 60.0
+offset_bottom = 202.0
+text = "Stealth"
+statIndex = 2
+skillGroupIndex = 1
+skillIndex = 5
+
+[node name="skillGroup_control" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_control" instance=ExtResource("4_k16rh")]
+offset_left = -240.0
+offset_right = -120.0
+text = "Drive Land Vehicle"
+autowrap_mode = 2
+statIndex = 1
+skillGroupIndex = 2
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_control" instance=ExtResource("4_k16rh")]
+offset_left = -120.0
+offset_right = 0.0
+text = "Pilot Air Vehicle"
+autowrap_mode = 2
+statIndex = 1
+skillGroupIndex = 2
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_control" instance=ExtResource("4_k16rh")]
+text = "Pilot Sea Vehicle"
+autowrap_mode = 2
+statIndex = 1
+skillGroupIndex = 2
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_control" instance=ExtResource("4_k16rh")]
+offset_left = 120.0
+offset_right = 240.0
+text = "Riding"
+statIndex = 1
+skillGroupIndex = 2
+skillIndex = 3
+
+[node name="skillGroup_education" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_right = -180.0
+text = "Accounting"
+skillGroupIndex = 3
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_right = -60.0
+text = "Animal Handling"
+autowrap_mode = 2
+skillGroupIndex = 3
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_right = 60.0
+text = "Bureaucracy"
+skillGroupIndex = 3
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_right = 180.0
+text = "Business"
+skillGroupIndex = 3
+skillIndex = 3
+
+[node name="skillRoot5" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_right = 300.0
+text = "Composition"
+skillGroupIndex = 3
+skillIndex = 4
+
+[node name="skillRoot6" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_top = 150.0
+offset_right = -180.0
+offset_bottom = 202.0
+text = "Criminology"
+skillGroupIndex = 3
+skillIndex = 5
+
+[node name="skillRoot7" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_top = 150.0
+offset_right = -60.0
+offset_bottom = 202.0
+text = "Cryptography"
+skillGroupIndex = 3
+skillIndex = 6
+
+[node name="skillRoot8" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_top = 150.0
+offset_right = 60.0
+offset_bottom = 202.0
+text = "Deduction"
+skillGroupIndex = 3
+skillIndex = 7
+
+[node name="skillRoot9" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_top = 150.0
+offset_right = 180.0
+offset_bottom = 202.0
+text = "Education"
+skillGroupIndex = 3
+skillIndex = 8
+
+[node name="skillRoot10" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_top = 150.0
+offset_right = 300.0
+offset_bottom = 202.0
+text = "Gamble"
+skillGroupIndex = 3
+skillIndex = 9
+
+[node name="skillRoot11" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_top = 300.0
+offset_right = -60.0
+offset_bottom = 352.0
+text = "Library Search"
+skillGroupIndex = 3
+skillIndex = 10
+
+[node name="skillRoot12" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_top = 300.0
+offset_right = 60.0
+offset_bottom = 352.0
+text = "Tactics"
+skillGroupIndex = 3
+skillIndex = 11
+
+[node name="skillRoot13" parent="branch_skills/branch_skillGroups/skillGroup_education" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_top = 300.0
+offset_right = 180.0
+offset_bottom = 352.0
+text = "Wilderness Survival"
+autowrap_mode = 2
+skillGroupIndex = 3
+skillIndex = 12
+
+[node name="skillGroup_ext-education" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="label_language" type="Label" parent="branch_skills/branch_skillGroups/skillGroup_ext-education"]
+offset_left = -275.0
+offset_right = -175.0
+offset_bottom = 26.0
+text = "Language
+"
+horizontal_alignment = 1
+
+[node name="label_localExp" type="Label" parent="branch_skills/branch_skillGroups/skillGroup_ext-education"]
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 26.0
+text = "Local Expert"
+horizontal_alignment = 1
+
+[node name="label_science" type="Label" parent="branch_skills/branch_skillGroups/skillGroup_ext-education"]
+offset_left = 175.0
+offset_right = 275.0
+offset_bottom = 26.0
+text = "Science"
+horizontal_alignment = 1
+
+[node name="branch_language" type="Node2D" parent="branch_skills/branch_skillGroups/skillGroup_ext-education"]
+
+[node name="branch_localExp" type="Node2D" parent="branch_skills/branch_skillGroups/skillGroup_ext-education"]
+
+[node name="branch_science" type="Node2D" parent="branch_skills/branch_skillGroups/skillGroup_ext-education"]
+
+[node name="skillGroup_fighting" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_fighting" instance=ExtResource("4_k16rh")]
+offset_left = -240.0
+offset_right = -120.0
+text = "Brawling"
+statIndex = 2
+skillGroupIndex = 4
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_fighting" instance=ExtResource("4_k16rh")]
+offset_left = -120.0
+offset_right = 0.0
+text = "Evasion"
+statIndex = 2
+skillGroupIndex = 4
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_fighting" instance=ExtResource("4_k16rh")]
+text = "Martial Arts"
+statIndex = 2
+skillGroupIndex = 4
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_fighting" instance=ExtResource("4_k16rh")]
+offset_left = 120.0
+offset_right = 240.0
+text = "Melee Weapon"
+autowrap_mode = 2
+statIndex = 2
+skillGroupIndex = 4
+skillIndex = 3
+
+[node name="skillGroup_performance" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_performance" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_right = 60.0
+text = "Acting"
+statIndex = 4
+skillGroupIndex = 5
+
+[node name="Label" type="Label" parent="branch_skills/branch_skillGroups/skillGroup_performance"]
+offset_left = -65.0
+offset_top = 150.0
+offset_right = 65.0
+offset_bottom = 176.0
+text = "Play Instrument"
+horizontal_alignment = 1
+
+[node name="branch_playInstr" type="Node2D" parent="branch_skills/branch_skillGroups/skillGroup_performance"]
+
+[node name="skillGroup_rangedweapon" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_rangedweapon" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_right = -180.0
+text = "Archery"
+statIndex = 1
+skillGroupIndex = 6
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_rangedweapon" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_right = -60.0
+text = "Autofire"
+statIndex = 1
+skillGroupIndex = 6
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_rangedweapon" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_right = 60.0
+text = "Handgun"
+statIndex = 1
+skillGroupIndex = 6
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_rangedweapon" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_right = 180.0
+text = "Heavy Weapons"
+autowrap_mode = 2
+justification_flags = 162
+statIndex = 1
+skillGroupIndex = 6
+skillIndex = 3
+
+[node name="skillRoot5" parent="branch_skills/branch_skillGroups/skillGroup_rangedweapon" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_right = 300.0
+text = "Shoulder Arms"
+autowrap_mode = 2
+statIndex = 1
+skillGroupIndex = 6
+skillIndex = 4
+
+[node name="skillGroup_social" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_right = -180.0
+text = "Bribery"
+statIndex = 4
+skillGroupIndex = 7
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_right = -60.0
+text = "Conversation"
+statIndex = 9
+skillGroupIndex = 7
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_right = 60.0
+text = "Human Perception"
+autowrap_mode = 2
+statIndex = 9
+skillGroupIndex = 7
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_right = 180.0
+text = "Interrogation"
+statIndex = 4
+skillGroupIndex = 7
+skillIndex = 3
+
+[node name="skillRoot5" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_right = 300.0
+text = "Persuasion"
+statIndex = 4
+skillGroupIndex = 7
+skillIndex = 4
+
+[node name="skillRoot6" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = -240.0
+offset_top = 150.0
+offset_right = -120.0
+offset_bottom = 202.0
+text = "Personal Grooming"
+autowrap_mode = 2
+statIndex = 4
+skillGroupIndex = 7
+skillIndex = 5
+
+[node name="skillRoot7" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = -120.0
+offset_top = 150.0
+offset_right = 0.0
+offset_bottom = 202.0
+text = "Streetwise"
+statIndex = 4
+skillGroupIndex = 7
+skillIndex = 6
+
+[node name="skillRoot8" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_top = 150.0
+offset_bottom = 202.0
+text = "Trading"
+statIndex = 4
+skillGroupIndex = 7
+skillIndex = 7
+
+[node name="skillRoot9" parent="branch_skills/branch_skillGroups/skillGroup_social" instance=ExtResource("4_k16rh")]
+offset_left = 120.0
+offset_top = 150.0
+offset_right = 240.0
+offset_bottom = 202.0
+text = "Wardrobe & Style"
+autowrap_mode = 2
+statIndex = 4
+skillGroupIndex = 7
+
+[node name="skillGroup_technique" type="Node2D" parent="branch_skills/branch_skillGroups"]
+visible = false
+position = Vector2(0, -60)
+
+[node name="skillRoot" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_right = -180.0
+text = "Air Vehicle Tech"
+autowrap_mode = 2
+statIndex = 3
+skillGroupIndex = 8
+
+[node name="skillRoot2" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_right = -60.0
+text = "Basic Tech"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 1
+
+[node name="skillRoot3" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_right = 60.0
+text = "Cybertech"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 2
+
+[node name="skillRoot4" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_right = 180.0
+text = "Demolitions"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 3
+
+[node name="skillRoot5" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_right = 300.0
+text = "Electronics/Security Tech"
+autowrap_mode = 2
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 4
+
+[node name="skillRoot6" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_top = 150.0
+offset_right = -180.0
+offset_bottom = 202.0
+text = "First Aid"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 5
+
+[node name="skillRoot7" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_top = 150.0
+offset_right = -60.0
+offset_bottom = 202.0
+text = "Forgery"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 6
+
+[node name="skillRoot8" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_top = 150.0
+offset_right = 60.0
+offset_bottom = 202.0
+text = "Land Vehicle Tech"
+autowrap_mode = 2
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 7
+
+[node name="skillRoot9" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_top = 150.0
+offset_right = 180.0
+offset_bottom = 202.0
+text = "Paint/Draw/Sculpt"
+autowrap_mode = 2
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 8
+
+[node name="skillRoot10" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_top = 150.0
+offset_right = 300.0
+offset_bottom = 202.0
+text = "Paramedic"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 9
+
+[node name="skillRoot11" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -300.0
+offset_top = 300.0
+offset_right = -180.0
+offset_bottom = 352.0
+text = "Photography/Film"
+autowrap_mode = 2
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 10
+
+[node name="skillRoot12" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -180.0
+offset_top = 300.0
+offset_right = -60.0
+offset_bottom = 352.0
+text = "Pick Lock"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 11
+
+[node name="skillRoot13" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = -60.0
+offset_top = 300.0
+offset_right = 60.0
+offset_bottom = 352.0
+text = "Pickpocket"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 12
+
+[node name="skillRoot14" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = 60.0
+offset_top = 300.0
+offset_right = 180.0
+offset_bottom = 352.0
+text = "Sea Vehicle Tech"
+autowrap_mode = 2
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 13
+
+[node name="skillRoot15" parent="branch_skills/branch_skillGroups/skillGroup_technique" instance=ExtResource("4_k16rh")]
+offset_left = 180.0
+offset_top = 300.0
+offset_right = 300.0
+offset_bottom = 352.0
+text = "Weaponstech"
+statIndex = 3
+skillGroupIndex = 8
+skillIndex = 14
+
+[node name="branch_inventory" type="Node2D" parent="."]
+
+[node name="BgSquareDarkGray" type="Sprite2D" parent="branch_inventory"]
+position = Vector2(190, 200)
+scale = Vector2(0.365, 0.5)
+texture = ExtResource("6_6b4f8")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="branch_inventory"]
+offset_left = -365.0
+offset_top = -40.0
+offset_right = -15.0
+offset_bottom = 440.0
+
+[node name="BgSquareDarkGray" type="Sprite2D" parent="branch_inventory/ScrollContainer"]
+position = Vector2(176.5, 245.5)
+scale = Vector2(0.376042, 0.536458)
+texture = ExtResource("6_6b4f8")
+
+[node name="container_inventory" type="Control" parent="branch_inventory/ScrollContainer"]
+custom_minimum_size = Vector2(350, 480)
+layout_mode = 2
+
+[node name="BgSquareCyan" type="Sprite2D" parent="branch_inventory/ScrollContainer"]
+position = Vector2(160, 606)
+scale = Vector2(0.0729167, 0.0562501)
+texture = ExtResource("7_gbrhs")
+
+[node name="Button" type="Button" parent="branch_inventory"]
+offset_left = -365.0
+offset_top = -79.0
+offset_right = -286.0
+offset_bottom = -48.0
+text = "Add Item"
+
+[node name="Button2" type="Button" parent="branch_inventory"]
+offset_left = -280.0
+offset_top = -79.0
+offset_right = -193.0
+offset_bottom = -48.0
+text = "Quick Add"
+
+[node name="Button3" type="Button" parent="branch_inventory"]
+offset_left = -187.0
+offset_top = -79.0
+offset_right = -137.0
+offset_bottom = -48.0
+text = "Edit"
+
+[node name="branch_combat" type="Node2D" parent="."]
+visible = false
+
+[node name="branch_cyberware" type="Node2D" parent="."]
+visible = false
+
+[node name="branch_roleAbility" type="Node2D" parent="."]
+visible = false
+
+[node name="branch_improvement" type="Node2D" parent="."]
+visible = false
+
+[node name="branch_downtime" type="Node2D" parent="."]
+visible = false
+
+[node name="branch_lifepath" type="Node2D" parent="."]
+visible = false
+
+[node name="branch_regPath" type="Node2D" parent="branch_lifepath"]
+position = Vector2(0, 30)
+
+[node name="header_lifepath" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -42.0
+offset_top = -120.0
+offset_right = 28.0
+offset_bottom = -90.0
+scale = Vector2(1.2, 1.2)
+text = "Lifepath"
+
+[node name="label_cultOrigins" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -350.0
+offset_top = -70.0
+offset_right = -228.0
+offset_bottom = -44.0
+text = "Cultural Origins"
+
+[node name="text_cultOrigins" type="Label" parent="branch_lifepath/branch_regPath/label_cultOrigins"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_personality" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_top = -70.0
+offset_right = 87.0
+offset_bottom = -44.0
+text = "Personality"
+
+[node name="text_personality" type="Label" parent="branch_lifepath/branch_regPath/label_personality"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_clothingStyle" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -350.0
+offset_right = -244.0
+offset_bottom = 26.0
+text = "Clothing Style"
+
+[node name="text_clothingStyle" type="Label" parent="branch_lifepath/branch_regPath/label_clothingStyle"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+autowrap_mode = 2
+
+[node name="label_hairstyle" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_right = 70.0
+offset_bottom = 26.0
+text = "Hairstyle	"
+
+[node name="text_hairstyle" type="Label" parent="branch_lifepath/branch_regPath/label_hairstyle"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_valueMost" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -350.0
+offset_top = 80.0
+offset_right = -185.0
+offset_bottom = 106.0
+text = "What You Value Most"
+
+[node name="text_valueMost" type="Label" parent="branch_lifepath/branch_regPath/label_valueMost"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_peopleFeel" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_top = 80.0
+offset_right = 212.0
+offset_bottom = 106.0
+text = "How You Feel About People"
+
+[node name="text_peopleFeel" type="Label" parent="branch_lifepath/branch_regPath/label_peopleFeel"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+autowrap_mode = 2
+
+[node name="label_valuedPerson" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -350.0
+offset_top = 160.0
+offset_right = -196.0
+offset_bottom = 186.0
+text = "Most Valued Person"
+
+[node name="text_valuedPerson" type="Label" parent="branch_lifepath/branch_regPath/label_valuedPerson"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_valuedPossession" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_top = 160.0
+offset_right = 185.0
+offset_bottom = 186.0
+text = "Most Valued Possession"
+
+[node name="text_valuedPossession" type="Label" parent="branch_lifepath/branch_regPath/label_valuedPossession"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_familyBackground" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -350.0
+offset_top = 230.0
+offset_right = -202.0
+offset_bottom = 256.0
+text = "Family Background"
+
+[node name="text_familyBackground" type="Label" parent="branch_lifepath/branch_regPath/label_familyBackground"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_childhoodEnv" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_top = 230.0
+offset_right = 183.0
+offset_bottom = 256.0
+text = "Childhood Environment"
+
+[node name="text_childhoodEnv" type="Label" parent="branch_lifepath/branch_regPath/label_childhoodEnv"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_familyCrisis" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -350.0
+offset_top = 300.0
+offset_right = -253.0
+offset_bottom = 326.0
+text = "Family Crisis"
+
+[node name="text_familyCrisis" type="Label" parent="branch_lifepath/branch_regPath/label_familyCrisis"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_lifeGoals" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_top = 300.0
+offset_right = 76.0
+offset_bottom = 326.0
+text = "Life Goals"
+
+[node name="text_lifeGoals" type="Label" parent="branch_lifepath/branch_regPath/label_lifeGoals"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="label_affectation" type="Label" parent="branch_lifepath/branch_regPath"]
+offset_left = -350.0
+offset_top = 370.0
+offset_right = -264.0
+offset_bottom = 396.0
+text = "Affectation"
+
+[node name="text_affectation" type="Label" parent="branch_lifepath/branch_regPath/label_affectation"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+
+[node name="btn_next" type="Button" parent="branch_lifepath/branch_regPath" node_paths=PackedStringArray("tabs")]
+offset_left = 150.0
+offset_top = -120.0
+offset_right = 180.0
+offset_bottom = -89.0
+text = ">"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_rolepath"), NodePath("..")]
+
+[node name="branch_rolepath" type="Node2D" parent="branch_lifepath"]
+visible = false
+position = Vector2(0, 30)
+
+[node name="header_lifepath" type="Label" parent="branch_lifepath/branch_rolepath"]
+offset_left = -80.0
+offset_top = -120.0
+offset_right = 80.0
+offset_bottom = -90.0
+scale = Vector2(1.2, 1.2)
+text = "Role-Based Lifepath"
+
+[node name="btn_prev" type="Button" parent="branch_lifepath/branch_rolepath" node_paths=PackedStringArray("tabs")]
+offset_left = -180.0
+offset_top = -120.0
+offset_right = -150.0
+offset_bottom = -89.0
+text = "<"
+script = ExtResource("3_6uotk")
+tabs = [NodePath("../../branch_regPath"), NodePath("..")]
+
+[node name="branch_labels" type="Node2D" parent="branch_lifepath/branch_rolepath"]
+
+[connection signal="value_changed" from="branch_charInfo/info_cashLabel/cashInput" to="." method="_on_cash_input_value_changed"]
+[connection signal="value_changed" from="branch_charInfo/info_impPointsLabel/impPointsInput" to="." method="_on_imp_points_input_value_changed"]
+[connection signal="value_changed" from="branch_charInfo/info_impPointsLabel/info_totalPointsLabel/impPointsLTInput" to="." method="_on_imp_points_lt_input_value_changed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_skills" to="btnGroup_sheetTabs/btn_skills" method="_on_pressed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_combat" to="btnGroup_sheetTabs/btn_combat" method="_on_pressed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_inventory" to="btnGroup_sheetTabs/btn_inventory" method="_on_pressed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_downtime" to="btnGroup_sheetTabs/btn_downtime" method="_on_pressed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_improvement" to="btnGroup_sheetTabs/btn_improvement" method="_on_pressed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_roleAbility" to="btnGroup_sheetTabs/btn_roleAbility" method="_on_pressed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_cyberware" to="btnGroup_sheetTabs/btn_cyberware" method="_on_pressed"]
+[connection signal="pressed" from="btnGroup_sheetTabs/btn_lifepath" to="btnGroup_sheetTabs/btn_lifepath" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Awareness" to="branch_skills/btnGroup_skillTabs/skillBtn_Awareness" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Body" to="branch_skills/btnGroup_skillTabs/skillBtn_Body" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Control" to="branch_skills/btnGroup_skillTabs/skillBtn_Control" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Education" to="branch_skills/btnGroup_skillTabs/skillBtn_Education" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Ext-Education" to="branch_skills/btnGroup_skillTabs/skillBtn_Ext-Education" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Fighting" to="branch_skills/btnGroup_skillTabs/skillBtn_Fighting" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Performance" to="branch_skills/btnGroup_skillTabs/skillBtn_Performance" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_RangedWeapon" to="branch_skills/btnGroup_skillTabs/skillBtn_RangedWeapon" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Social" to="branch_skills/btnGroup_skillTabs/skillBtn_Social" method="_on_pressed"]
+[connection signal="pressed" from="branch_skills/btnGroup_skillTabs/skillBtn_Technique" to="branch_skills/btnGroup_skillTabs/skillBtn_Technique" method="_on_pressed"]
+[connection signal="pressed" from="branch_lifepath/branch_regPath/btn_next" to="branch_lifepath/branch_regPath/btn_next" method="_on_pressed"]
+[connection signal="pressed" from="branch_lifepath/branch_rolepath/btn_prev" to="branch_lifepath/branch_rolepath/btn_prev" method="_on_pressed"]

@@ -1,0 +1,12 @@
+extends ScrollContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	set_deferred("scroll_vertical", 20000)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass

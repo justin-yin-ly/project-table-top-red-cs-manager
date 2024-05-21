@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7wdpl2lxqfx0"]
+
+[ext_resource type="Script" path="res://Scripts/Test Scripts/save-test.gd" id="1_gsjsx"]
+
+[node name="save_test" type="Node2D"]
+
+[node name="fake_player" type="Node2D" parent="."]
+script = ExtResource("1_gsjsx")
+charName = "Player 1"
+hp = 10
+atk = 5
+def = 5
+
+[node name="fake_player2" type="Node2D" parent="."]
+script = ExtResource("1_gsjsx")
+charName = "Player 2"
+hp = 15
+atk = 10
+
+[node name="Button" type="Button" parent="."]
+offset_left = 174.0
+offset_top = 177.0
+offset_right = 218.0
+offset_bottom = 208.0
+text = "Save"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 174.0
+offset_top = 215.0
+offset_right = 218.0
+offset_bottom = 246.0
+text = "Load
+"
+
+[connection signal="pressed" from="Button" to="fake_player" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="fake_player2" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="fake_player" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="fake_player2" method="_on_button_2_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhub5k3yaoas6"]
+
+[ext_resource type="Script" path="res://Scripts/UI Scripts/modal_dialogue.gd" id="1_3yvey"]
+[ext_resource type="Texture2D" uid="uid://d8sivnc77lfh" path="res://Sprites/BG Squares/bgSquare_gray.png" id="1_gh0cj"]
+[ext_resource type="Texture2D" uid="uid://b23pdyvpnj7d1" path="res://Sprites/BG Squares/bgSquare_black.png" id="1_nsbvh"]
+
+[node name="modal_dialogue" type="Node2D" node_paths=PackedStringArray("node_title", "node_body")]
+script = ExtResource("1_3yvey")
+node_title = NodePath("label_title")
+node_body = NodePath("label_body")
+
+[node name="BgSquareBlack" type="Sprite2D" parent="."]
+scale = Vector2(0.925, 0.625)
+texture = ExtResource("1_nsbvh")
+
+[node name="BgSquareGray" type="Sprite2D" parent="."]
+scale = Vector2(0.9, -0.6)
+texture = ExtResource("1_gh0cj")
+
+[node name="label_title" type="Label" parent="."]
+offset_left = -240.0
+offset_top = -280.0
+offset_right = 160.0
+offset_bottom = -254.0
+scale = Vector2(1.2, 1.2)
+text = "Title Here"
+horizontal_alignment = 1
+
+[node name="label_body" type="Label" parent="."]
+offset_left = -400.0
+offset_top = -230.0
+offset_right = 400.0
+offset_bottom = 170.0
+text = "Body text here"
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[node name="closeDialogue" type="Button" parent="."]
+offset_left = 380.0
+offset_top = -275.0
+offset_right = 420.0
+offset_bottom = -244.0
+text = "X
+"
+
+[connection signal="pressed" from="closeDialogue" to="." method="_on_close_dialogue_pressed"]

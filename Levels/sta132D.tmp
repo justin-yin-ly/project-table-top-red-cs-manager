@@ -1,0 +1,143 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkco3yxkk7nn5"]
+
+[ext_resource type="Script" path="res://Scripts/saveManager.gd" id="1_witlg"]
+[ext_resource type="Script" path="res://Scripts/Test Scripts/scrollTest.gd" id="3_37lj7"]
+[ext_resource type="Script" path="res://Scripts/UI Scripts/container_log.gd" id="4_4snt8"]
+[ext_resource type="Texture2D" uid="uid://yu8le71c5o45" path="res://Sprites/BG Squares/bgSquare_darkGray.png" id="5_qeykc"]
+[ext_resource type="Texture2D" uid="uid://b0i2sfudv74au" path="res://Sprites/target_reticle.png" id="5_y4cet"]
+[ext_resource type="Script" path="res://Scripts/UI Scripts/btn_tabs.gd" id="6_207qw"]
+[ext_resource type="Texture2D" uid="uid://csu8f8yxnv45i" path="res://Sprites/die-icon.png" id="7_6mmgj"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("fileMessage", "loadTab", "loadContainer")]
+script = ExtResource("1_witlg")
+fileMessage = NodePath("message")
+loadTab = NodePath("branch_leftTabs/btn_load/ScrollContainer")
+loadContainer = NodePath("branch_leftTabs/btn_load/ScrollContainer/VBoxContainer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="branch_rightTabs" type="Node2D" parent="."]
+
+[node name="btn_rollHistory" type="Button" parent="branch_rightTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 750.0
+offset_top = -480.0
+offset_right = 950.0
+offset_bottom = -420.0
+text = "Roll History "
+alignment = 2
+script = ExtResource("6_207qw")
+tabs = [NodePath("../../branch_rollHistory"), NodePath("..")]
+
+[node name="Die-icon" type="Sprite2D" parent="branch_rightTabs/btn_rollHistory"]
+position = Vector2(30, 30)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("7_6mmgj")
+
+[node name="btn_combatLog" type="Button" parent="branch_rightTabs" node_paths=PackedStringArray("tabs")]
+offset_left = 750.0
+offset_top = -400.0
+offset_right = 950.0
+offset_bottom = -340.0
+text = "Combat Log"
+alignment = 2
+script = ExtResource("6_207qw")
+tabs = [NodePath("../../branch_rollHistory"), NodePath("..")]
+
+[node name="TargetReticle" type="Sprite2D" parent="branch_rightTabs/btn_combatLog"]
+position = Vector2(30, 30)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_y4cet")
+
+[node name="branch_leftTabs" type="Node2D" parent="."]
+
+[node name="btn_save" type="Button" parent="branch_leftTabs"]
+offset_left = -950.0
+offset_top = -400.0
+offset_right = -750.0
+offset_bottom = -340.0
+text = " Save"
+alignment = 0
+
+[node name="btn_load" type="Button" parent="branch_leftTabs"]
+offset_left = -950.0
+offset_top = -320.0
+offset_right = -750.0
+offset_bottom = -260.0
+text = " Load"
+alignment = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="branch_leftTabs/btn_load"]
+visible = false
+custom_minimum_size = Vector2(240, 400)
+layout_mode = 0
+offset_left = 210.0
+offset_right = 410.0
+offset_bottom = 400.0
+
+[node name="BgSquareDarkGray" type="Sprite2D" parent="branch_leftTabs/btn_load/ScrollContainer"]
+scale = Vector2(0.25, 0.75)
+texture = ExtResource("5_qeykc")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="branch_leftTabs/btn_load/ScrollContainer"]
+custom_minimum_size = Vector2(240, 400)
+layout_mode = 2
+
+[node name="btn_newChar" type="Button" parent="branch_leftTabs"]
+offset_left = -950.0
+offset_top = -480.0
+offset_right = -750.0
+offset_bottom = -420.0
+text = " New Character"
+alignment = 0
+
+[node name="branch_rollHistory" type="Node2D" parent="."]
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="branch_rollHistory"]
+offset_left = 640.0
+offset_top = -500.0
+offset_right = 960.0
+offset_bottom = 500.0
+script = ExtResource("3_37lj7")
+
+[node name="BgSquareDarkGray" type="Sprite2D" parent="branch_rollHistory/ScrollContainer"]
+position = Vector2(160, 499)
+scale = Vector2(0.35, 1.1)
+texture = ExtResource("5_qeykc")
+
+[node name="container_rollHistory" type="Control" parent="branch_rollHistory/ScrollContainer" node_paths=PackedStringArray("scrollContainer")]
+custom_minimum_size = Vector2(320, 1000)
+layout_mode = 2
+script = ExtResource("4_4snt8")
+scrollContainer = NodePath("..")
+
+[node name="collapseButton" type="Button" parent="branch_rollHistory" node_paths=PackedStringArray("tabs")]
+offset_left = 600.0
+offset_top = -500.0
+offset_right = 631.0
+offset_bottom = -469.0
+scale = Vector2(1.2, 1.2)
+text = ">"
+script = ExtResource("6_207qw")
+tabs = [NodePath("../../branch_rightTabs"), NodePath("..")]
+
+[node name="message" type="Label" parent="."]
+offset_left = -960.0
+offset_top = -540.0
+offset_bottom = -514.0
+
+[node name="versionNum" type="Label" parent="."]
+offset_left = 820.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = -514.0
+text = "Tabletop RED v0.3"
+
+[connection signal="pressed" from="branch_rightTabs/btn_rollHistory" to="branch_rightTabs/btn_rollHistory" method="_on_pressed"]
+[connection signal="pressed" from="branch_leftTabs/btn_save" to="." method="_on_btn_save_pressed"]
+[connection signal="pressed" from="branch_leftTabs/btn_load" to="." method="_on_btn_load_pressed"]
+[connection signal="mouse_entered" from="branch_leftTabs/btn_load/ScrollContainer" to="." method="_on_scroll_container_mouse_entered"]
+[connection signal="mouse_exited" from="branch_leftTabs/btn_load/ScrollContainer" to="." method="_on_scroll_container_mouse_exited"]
+[connection signal="pressed" from="branch_leftTabs/btn_newChar" to="." method="_on_btn_new_char_pressed"]
+[connection signal="pressed" from="branch_rollHistory/collapseButton" to="branch_rollHistory/collapseButton" method="_on_pressed"]

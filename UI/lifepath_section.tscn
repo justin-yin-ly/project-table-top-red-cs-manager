@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://o2xqr6gycerq"]
+
+[ext_resource type="Script" path="res://Scripts/UI Scripts/lifepath_section.gd" id="1_gdnl8"]
+
+[node name="label_peopleFeel" type="Label" node_paths=PackedStringArray("sectionText")]
+offset_top = 80.0
+offset_right = 330.0
+offset_bottom = 106.0
+text = "Placeholder"
+autowrap_mode = 2
+script = ExtResource("1_gdnl8")
+sectionText = NodePath("text_peopleFeel")
+
+[node name="text_peopleFeel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 330.0
+offset_bottom = 49.0
+autowrap_mode = 2

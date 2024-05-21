@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0o0vrru5jlqp"]
+
+[ext_resource type="Script" path="res://Scripts/UI Scripts/skill.gd" id="1_0x0w8"]
+
+[node name="skillRoot" type="Label" node_paths=PackedStringArray("skillLevelTxt", "skillStat", "skillTotal")]
+offset_right = 120.0
+offset_bottom = 52.0
+text = "Skill Name"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("1_0x0w8")
+skillGroupIndex = -1
+skillLevelTxt = NodePath("skillLevel")
+skillStat = NodePath("skillStat")
+skillTotal = NodePath("skillTotal")
+
+[node name="skillTotal" type="Label" parent="."]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 106.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="skillLevel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 50.0
+offset_bottom = 81.0
+text = "Lvl. 0"
+horizontal_alignment = 2
+
+[node name="plus" type="Label" parent="."]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 120.0
+offset_bottom = 81.0
+text = "+"
+horizontal_alignment = 1
+
+[node name="skillStat" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 55.0
+offset_right = 120.0
+offset_bottom = 81.0
+text = "STAT"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 110.0
+offset_right = 85.0
+offset_bottom = 141.0
+text = "Roll"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6duta1ms5lmo"]
+
+[ext_resource type="Texture2D" uid="uid://dqj1gt6rfibnj" path="res://Sprites/squareActual.png" id="1_nfgb6"]
+
+[node name="tile" type="Node2D"]
+
+[node name="SquareActual" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_nfgb6")
+centered = false
