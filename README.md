@@ -1,4 +1,4 @@
-# Project Tabletop RED: Character Sheet Manager
+# Project Tabletop RED: Character Sheet Manager (v0.4.1)
 Around fall of 2023, I decided to look into the Godot game engine. Around that same time, I was playing a lot of the tabletop role-playing game, Cyberpunk RED, created by R. Talsorian Games. This culminated in starting this personal project of mine, a character creator and character sheet manager for Cyberpunk RED built in Godot.
 
 ## Godot
